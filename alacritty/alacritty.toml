@@ -1,0 +1,9 @@
+[font]
+normal = { family = "monospace", style = "Regular" }
+size = 11
+
+[keyboard]
+bindings = [
+	{ key = "I", mods = "Control|Alt", action = "SpawnNewInstance" },
+	{ key = "T", mods = "Control|Alt", action = "CreateNewWindow" }
+]
