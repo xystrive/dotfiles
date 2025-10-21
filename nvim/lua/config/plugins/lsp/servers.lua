@@ -9,11 +9,11 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 
---require('lspconfig')['clangd'].setup {
---    on_attach = on_attach
---}
+vim.lsp.config('clangd', {
+    on_attach = on_attach
+})
 
-require('lspconfig')['intelephense'].setup {
+vim.lsp.config('intelephense', {
     cmd = { "intelephense", "--stdio" },
     filetypes = { "php" },
     root_dir = function(pattern)
@@ -21,9 +21,9 @@ require('lspconfig')['intelephense'].setup {
         local root = util.root_pattern('composer.json', '.git')(pattern) 
         return util.path.is_descendant(cwd, root) and cwd or root
     end,
-}
+})
 
-require('lspconfig')['gopls'].setup {
+vim.lsp.config('gopls', {
     cmd = {"gopls", "serve"},
     filetypes = {"go", "gomod"},
     root_dir = require('lspconfig/util').root_pattern("go.work", "go.mod", ".git"),
@@ -36,9 +36,9 @@ require('lspconfig')['gopls'].setup {
         staticcheck = true,
       },
     },
-}
+})
 
-require('lspconfig')['pyright'].setup {
+vim.lsp.config('pyright', {
     cmd = { "pyright-langserver", "--stdio" },
     filetypes = { "python" },
     settings = {
@@ -50,10 +50,10 @@ require('lspconfig')['pyright'].setup {
             }
         }
     }
-}
+})
 
 
-require('lspconfig')['texlab'].setup {
+vim.lsp.config('texlab', {
     cmd = { "texlab" },
     filetypes = { "tex", "plaintex", "bib" },
     settings = {
@@ -82,8 +82,7 @@ require('lspconfig')['texlab'].setup {
         }
     },
     single_file_support = true
-}
-
+})
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -114,11 +113,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
---require('lspconfig')['tsserver'].setup {
---    cmd = { "typescript-language-server", "--stdio" },
---    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
---    init_options = {
---        hostInfo = "neovim"
---    },
--- root_dir = require('lspconfig/util').root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
---}
+vim.lsp.config('ts_ls', {
+    cmd = { "typescript-language-server", "--stdio" },
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    init_options = {
+        hostInfo = "neovim"
+    },
+ root_dir = require('lspconfig/util').root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+})
