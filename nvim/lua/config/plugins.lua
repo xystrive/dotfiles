@@ -11,7 +11,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 -- Snippet completion source for nvim-cmp
 Plug 'hrsh7th/cmp-vsnip'
 
--- Other usefull completion sources
+-- Other useful completion sources
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-buffer'
 
@@ -46,7 +46,7 @@ Plug 'tanvirtin/vgit.nvim'
 Plug('fatih/vim-go', { ['do'] = ':GoUpdateBinaries' })
 
 -- Wakapi time tracking plugin
-Plug 'wakatime/vim-wakatime'
+-- Plug 'wakatime/vim-wakatime'
 
 Plug('iamcco/markdown-preview.nvim', { ['do'] = 'cd app && npx --yes yarn install' })
 
@@ -65,13 +65,15 @@ Plug('nvim-telescope/telescope.nvim', {['tag'] = '0.1.8' })
 -- Treesitter configurations and abstraction layer for Neovim. 
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
 
-
 -- An extension for nvim-dap providing configurations for launching go debugger (delve) and debugging individual tests
 Plug 'leoluz/nvim-dap-go'
 -- A library for asynchronous IO in Neovim
 Plug 'nvim-neotest/nvim-nio'
 -- A UI for nvim-dap 
 Plug 'rcarriga/nvim-dap-ui'
+
+-- ecplise.jdt.ls Extensions for the built-in LSP support
+Plug 'mfussenegger/nvim-jdtls'
 
 vim.call('plug#end')
 
@@ -90,3 +92,4 @@ require('config/plugins/telescope')
 require('config/plugins/dap/nvim-dap')
 require('config/plugins/dap/nvim-dap-go')
 require('config/plugins/dap/nvim-dap-ui')
+-- require('config/plugins/jdtls')
