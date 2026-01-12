@@ -1,4 +1,4 @@
-require'nvim-treesitter.configs'.setup {
+require'nvim-treesitter'.setup {
     ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "rust", "java", "typescript"},
     -- ... any other configuration params here ...
 
