@@ -16,9 +16,9 @@
         //"sway/window"
     //],
     "modules-right": [
-        "custom/pomodoro",
         "tray",
-        "idle_inhibitor",
+        //"idle_inhibitor",
+        "hyprland/language",
         //"mpd",
         //"network",
         //"power-profiles-daemon",
@@ -190,6 +190,12 @@
         },
         "on-click": "pavucontrol"
     },
+    "hyprland/language": {
+        "format": "{}",
+        "format-uk": "UA",
+        "format-en": "US",
+        "format-pt": "PT"
+    }
     //"custom/media": {
     //    "format": "{icon} {}",
     //    "return-type": "json",
@@ -214,11 +220,11 @@
    // 		"hibernate": "systemctl hibernate"
    // 	}
    // },
-    "custom/pomodoro": {
-        "format": "{}",
-        "return-type": "json",
-        "exec": "waybar-module-pomodoro --work 45",
-        "on-click": "waybar-module-pomodoro toggle",
-        "on-click-right": "waybar-module-pomodoro reset"
-    }
+   // "custom/pomodoro": {
+   //     "format": "{}",
+   //     "return-type": "json",
+   //     "exec": "waybar-module-pomodoro --work 45",
+   //     "on-click": "waybar-module-pomodoro toggle",
+   //     "on-click-right": "waybar-module-pomodoro reset"
+   // }
 }
